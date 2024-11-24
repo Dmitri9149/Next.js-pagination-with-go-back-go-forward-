@@ -1,4 +1,4 @@
-import Home from "../../components/Home";
+import Home from "../../components/Content";
 import SetParameters from "../../components/SetParameters"
 
 export default async function Page( {searchParams} ) {
