@@ -1,9 +1,7 @@
-'use client'
 import Head from "next/head";
 
 import styles from "../../styles/Home.module.css";
 import { paginate } from "../helpers/paginate";
-import { useSearchParams , usePathname, useRouter } from 'next/navigation';
 
 export default function Home( {data, currentPage, pageSize}) {
 
