@@ -1,18 +1,24 @@
 import Home from "../../components/Home";
+import SetParameters from "../../components/SetParameters"
 
-export default async function Page(params) {
+export default async function Page( {searchParams} ) {
+
+  const params_result = await searchParams;
+  console.log("Page params ", params_result);
+  const page = params_result.page || '';
+  const currentPage = Number(page) || 1;
+  const pageSize = 10;
+
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const data = await res.json();
-
-  const params_result = await params;
-  console.log("Page params ", params_result);
 //
 //  const query = searchParams?.query || '';
 //  const currentPage = Number(searchParams?.page) || 1;
 
   return (
     <main>
-      <Home data={data}></Home>
+      <Home data={data} currentPage={currentPage} pageSize={pageSize}></Home>
+      <SetParameters dataLength={data.length} pageSize={pageSize} currentPage={currentPage}></SetParameters>
     </main>
   )
 }
