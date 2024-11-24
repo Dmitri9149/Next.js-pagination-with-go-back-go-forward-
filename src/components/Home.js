@@ -17,7 +17,7 @@ export default function Home( {data, currentPage, pageSize}) {
       </Head>
 
       <p>
-        <strong>NextJS x Pagination</strong>
+        <strong>NextJS x Pagination x Go Back x Go Forward</strong>
       </p>
       <p>
         Page: <span style={{ color: "red" }}>{currentPage}</span>
