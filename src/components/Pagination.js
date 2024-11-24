@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { forwardRef } from 'react';
 import { useSearchParams , usePathname, useRouter } from 'next/navigation';
 
-const Pagination = forwardRef (( {items, pageSize, currentPage, onPageChange} , ref) => {
+const Pagination = ( {items, pageSize, currentPage, onPageChange}) => {
   const pagesCount = Math.ceil(items / pageSize); // 100/10
 
   if (pagesCount === 1) return null;
@@ -23,20 +23,19 @@ const Pagination = forwardRef (( {items, pageSize, currentPage, onPageChange} , 
             className={
               page === currentPage ? styles.pageItemActive : styles.pageItem
             }
-          >
-            <a 
-              className={styles.pageLink} 
-              onClick={() => onPageChange(page)}
-              >
-              {page}
-            </a>
-            <Link href={ref}></Link> 
+          > 
+             <a 
+                className={styles.pageLink} 
+                onClick={() => onPageChange(page)}
+                >
+                {page}
+              </a> 
           </li>
         ))}
       </ul>
     </div>
   );
-});
+};
 
 
 export default Pagination;
