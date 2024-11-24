@@ -7,6 +7,7 @@ export default async function Page( {searchParams} ) {
   console.log("Page params ", params_result);
   const page = params_result.page || '';
   const currentPage = Number(page) || 1;
+  console.log("Current page ", currentPage);
   const pageSize = 10;
 
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");

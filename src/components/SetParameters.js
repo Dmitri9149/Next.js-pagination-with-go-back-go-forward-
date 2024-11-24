@@ -11,7 +11,7 @@ export default function SetParameters({dataLength, pageSize, currentPage}) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
-  const page = Number(searchParams.get('page'))
+//  const page = Number(searchParams.get('page'))
 
   const onPageChange = (page) => {
     const params = new URLSearchParams(searchParams);
